@@ -41,14 +41,6 @@ public class Employee {
         this.myPassword = thePassword;
     }
 
-//    /**
-//     * Creates a role of student by null input.
-//     */
-//    public Employee() {
-//        this.myUserName = "student";
-//        this.myPassword = "student";
-//    }
-
     /**
      * Gets the employee's username.
      *

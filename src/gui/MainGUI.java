@@ -142,7 +142,7 @@ public class MainGUI implements ActionListener {
             try {
                 EmployeeCollection.login(null, null, STUDENT);
             } catch (SQLException e1) {
-                e1.printStackTrace(); //For debugging!
+//                e1.printStackTrace(); //For debugging!
                 JOptionPane.showMessageDialog(null, "Unable to connect to the server!"
                                 + "\nPlease check your internet connection and restart the program!",
                         "Login failed", JOptionPane.WARNING_MESSAGE);
@@ -155,7 +155,7 @@ public class MainGUI implements ActionListener {
             try {
                 EmployeeCollection.login(user, pass, EMPLOYEE);
             } catch (SQLException err) {
-                err.printStackTrace(); //For debugging!
+//                err.printStackTrace(); //For debugging!
                 JOptionPane.showMessageDialog(null, "Unable to connect to the server!"
                                 + "\nPlease check your internet connection and restart the program!",
                         "Login failed", JOptionPane.WARNING_MESSAGE);
