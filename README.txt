@@ -4,6 +4,13 @@ username = faculty, password = faculty - to login as a faculty staff.
 username = advisor, password = advisor - to login as an advisor.
 press the "Log in as a student" button to login as a student.
 
+Use cases that are implemented: Add or Update Student' Data, Generate Outputs, Login into the system, 
+Graduated students request to edit their employment information. 
+	Nico is working on the model classes and writing tests, add changes in the Phase 3 document. 
+	Yau: working on model classes, writing tests, fixing GUI classes, clean up code and working on the design pattern.
+	Loc: working on all of the GUI classes, clean up code and add changes in the Phase 3 document.
+
+Instruction for using the program:
 Administrative staff:
 When you are logged in as an administrative staff, all of the tabs are available except the "Request to Edit Student's Data" tab.
 To search for a student, you can press the "Student Search" button and then enter the search keyword.
