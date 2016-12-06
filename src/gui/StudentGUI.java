@@ -118,7 +118,8 @@ public class StudentGUI extends JPanel implements ActionListener,
         setLayout(new BorderLayout());
         myStudentCollection = new StudentCollection();
         myList = new ArrayList<>();
-        /*myIter = */getData(null);
+        /*myIter = */
+        getData(null);
         createComponents();
         setVisible(true);
     }
@@ -130,11 +131,6 @@ public class StudentGUI extends JPanel implements ActionListener,
      * @return list of student
      */
     private void getData(final String theSearchKey) {
-//        if (theSearchKey != null) {
-//            myList = StudentCollection.search(theSearchKey);
-//        } else {
-//            myList = StudentCollection.showAll();
-//        }
         myList.clear();
         Iterator iter;
         if (theSearchKey != null) {
@@ -147,18 +143,8 @@ public class StudentGUI extends JPanel implements ActionListener,
 
         if (iter != null) {
             myData = new Object[size][myColumnNames.length];
-//            for (int i = 0; i < myList.size(); i++) {
-//                myData[i][0] = myList.get(i).getName();
-//                myData[i][1] = myList.get(i).getID();
-//                myData[i][2] = myList.get(i).getMajor();
-//                myData[i][3] = myList.get(i).getTerm();
-//                myData[i][4] = myList.get(i).getDegree();
-//                myData[i][5] = myList.get(i).getYear();
-//                myData[i][6] = myList.get(i).getGPA();
-//                myData[i][7] = myList.get(i).getEmail();
-//            }
             int i = 0;
-            for(; iter.hasNext();){
+            for (; iter.hasNext(); ) {
                 Student student = (Student) iter.next();
                 myList.add(student);
                 myData[i][0] = student.getName();
@@ -172,8 +158,6 @@ public class StudentGUI extends JPanel implements ActionListener,
                 i++;
             }
         }
-//        System.out.println(!myIter.hasNext());
-//        return myIter;
     }
 
     /**
@@ -307,8 +291,7 @@ public class StudentGUI extends JPanel implements ActionListener,
         } else if (theEvent.getSource() == myAddBtn) {
             performAddStudent();
         } else if (theEvent.getSource() == myBtnList) {
-//            myList = null;
-            /*myIter = */getData(null);
+            getData(null);
             myPnlContent.removeAll();
             myTable = new JTable(myData, myColumnNames);
             myTable.getModel().addTableModelListener(this);
@@ -326,8 +309,7 @@ public class StudentGUI extends JPanel implements ActionListener,
         } else if (theEvent.getSource() == mySearchBtn) {
             String title = myTxfTitle.getText();
             if (title.length() > 0) {
-//                myList = null;
-                /*myIter = */getData(title);
+                getData(title);
                 myPnlContent.removeAll();
                 myTable = new JTable(myData, myColumnNames);
                 myTable.getModel().addTableModelListener(this);
@@ -406,7 +388,6 @@ public class StudentGUI extends JPanel implements ActionListener,
         } else {
             Student student = new Student(name, sid, major, gradTerm, degree, year, gpa, email);
 
-//    		String message = "Student add failed";
             String message = null;
             if (StudentCollection.addStudent(student)) {
                 message = "Student added successfully!\nNow you can add the employment information"
@@ -444,5 +425,4 @@ public class StudentGUI extends JPanel implements ActionListener,
             }
         }
     }
-
 }

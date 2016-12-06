@@ -70,8 +70,8 @@ public class StudentDB {
             }
         } catch (SQLException e) {
 //        	e.printStackTrace(); //For debugging.
-        	JOptionPane.showMessageDialog(null, "Unable to connect to the server!"
-                    + "\nPlease check your internet connection and restart the program!",
+            JOptionPane.showMessageDialog(null, "Unable to connect to the server!"
+                            + "\nPlease check your internet connection and restart the program!",
                     "Failed Warning", JOptionPane.WARNING_MESSAGE);
         } finally {
             if (stmt != null) {
@@ -116,8 +116,8 @@ public class StudentDB {
             }
         } catch (SQLException e) {
 //        	e.printStackTrace(); //For debugging.!
-        	JOptionPane.showMessageDialog(null, "Unable to connect to the server!"
-                    + "\nPlease check your internet connection and restart the program!",
+            JOptionPane.showMessageDialog(null, "Unable to connect to the server!"
+                            + "\nPlease check your internet connection and restart the program!",
                     "Failed Warning", JOptionPane.WARNING_MESSAGE);
         } finally {
             if (stmt != null) {
@@ -166,7 +166,7 @@ public class StudentDB {
         } catch (SQLException e) {
 //            e.printStackTrace(); //For debugging.
             JOptionPane.showMessageDialog(null, "Unable to connect to the server!"
-                    + "\nPlease check your internet connection and restart the program!",
+                            + "\nPlease check your internet connection and restart the program!",
                     "Failed Warning", JOptionPane.WARNING_MESSAGE);
         } finally {
             if (stmt != null) {
@@ -224,7 +224,7 @@ public class StudentDB {
         } catch (SQLException e) {
 //            e.printStackTrace(); //For debugging.
             JOptionPane.showMessageDialog(null, "Unable to connect to the server!"
-                    + "\nPlease check your internet connection and restart the program!",
+                            + "\nPlease check your internet connection and restart the program!",
                     "Failed Warning", JOptionPane.WARNING_MESSAGE);
         } finally {
             if (stmt != null) {
@@ -248,37 +248,44 @@ public class StudentDB {
         }
         String keyword = theSearch.toLowerCase();
         for (Student std : myStudentList) {
-            if (std.getName().toLowerCase().contains(keyword)) {
+            if (std.getName().toLowerCase().contains(keyword) &&
+                    !filterList.contains(std)) {
                 filterList.add(std);
             }
         }
         for (Student std : myStudentList) {
-            if (std.getID().toLowerCase().contains(keyword)) {
+            if (std.getID().toLowerCase().contains(keyword) &&
+                    !filterList.contains(std)) {
                 filterList.add(std);
             }
         }
         for (Student std : myStudentList) {
-            if (std.getMajor().toLowerCase().contains(keyword)) {
+            if (std.getMajor().toLowerCase().contains(keyword) &&
+                    !filterList.contains(std)) {
                 filterList.add(std);
             }
         }
         for (Student std : myStudentList) {
-            if (std.getTerm().toLowerCase().contains(keyword)) {
+            if (std.getTerm().toLowerCase().contains(keyword) &&
+                    !filterList.contains(std)) {
                 filterList.add(std);
             }
         }
         for (Student std : myStudentList) {
-            if (std.getDegree().toLowerCase().contains(keyword)) {
+            if (std.getDegree().toLowerCase().contains(keyword) &&
+                    !filterList.contains(std)) {
                 filterList.add(std);
             }
         }
         for (Student std : myStudentList) {
-            if (std.getYear().toLowerCase().contains(keyword)) {
+            if (std.getYear().toLowerCase().contains(keyword) &&
+                    !filterList.contains(std)) {
                 filterList.add(std);
             }
         }
         for (Student std : myStudentList) {
-            if (std.getEmail().toLowerCase().contains(keyword)) {
+            if (std.getEmail().toLowerCase().contains(keyword) &&
+                    !filterList.contains(std)) {
                 filterList.add(std);
             }
         }
@@ -332,7 +339,7 @@ public class StudentDB {
         } catch (SQLException e) {
 //            e.printStackTrace(); //For debugging.
             JOptionPane.showMessageDialog(null, "Unable to connect to the server!"
-                    + "\nPlease check your internet connection and restart the program!",
+                            + "\nPlease check your internet connection and restart the program!",
                     "Failed Warning", JOptionPane.WARNING_MESSAGE);
         } finally {
             if (stmt != null) {

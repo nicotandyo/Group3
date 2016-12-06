@@ -75,10 +75,10 @@ public class StudentCollectionTest {
     }
 
     /**
-     * Test searchByMajor.
+     * Test search any column by any keywords, using major.
      */
     @Test
-    public void testSearchByMajor() {
+    public void testSearchByAny1() {
         List<Student> filteredStudent = StudentCollection.search(myMajor);
 
         boolean found = false;
@@ -92,10 +92,10 @@ public class StudentCollectionTest {
     }
 
     /**
-     * Test searchByDegree.
+     * Test 2, search any column by any keywords, using degree.
      */
     @Test
-    public void testSearchByDegree() {
+    public void testSearchByAny2() {
         List<Student> filteredStudent = StudentCollection.search(myDegree);
 
         boolean found = false;
@@ -175,7 +175,7 @@ public class StudentCollectionTest {
      * Testing search by Job.
      */
     @Test
-    public void testSearchbyJob() {
+    public void testSearchByJob() {
         List<Output> jobOutput = null;
         jobOutput = StudentCollection.searchByJob();
         int result = jobOutput.size();
@@ -186,7 +186,7 @@ public class StudentCollectionTest {
      * Testing search by Major.
      */
     @Test
-    public void testSearchbyMajor() {
+    public void testSearchByMajor() {
         List<Output> majorOutput = null;
         majorOutput = StudentCollection.searchByMajorOrDegree(myMajor);
         int result = majorOutput.size();

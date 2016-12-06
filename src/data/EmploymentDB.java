@@ -2,11 +2,10 @@ package data;
 
 import student.EmploymentData;
 
+import javax.swing.*;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
-
-import javax.swing.JOptionPane;
 
 /**
  * This class contains methods to access the Employment
@@ -57,7 +56,7 @@ public class EmploymentDB {
         } catch (SQLException e) {
 //            e.printStackTrace();
             JOptionPane.showMessageDialog(null, "Unable to connect to the server!"
-                    + "\nPlease check your internet connection and restart the program!",
+                            + "\nPlease check your internet connection and restart the program!",
                     "Failed Warning", JOptionPane.WARNING_MESSAGE);
             return false;
         }
@@ -95,7 +94,7 @@ public class EmploymentDB {
         } catch (SQLException e) {
 //            e.printStackTrace();
             JOptionPane.showMessageDialog(null, "Unable to connect to the server!"
-                    + "\nPlease check your internet connection and restart the program!",
+                            + "\nPlease check your internet connection and restart the program!",
                     "Failed Warning", JOptionPane.WARNING_MESSAGE);
             return false;
         }
@@ -147,7 +146,7 @@ public class EmploymentDB {
         } catch (SQLException e) {
 //            e.printStackTrace(); //For debugging
             JOptionPane.showMessageDialog(null, "Unable to connect to the server!"
-                    + "\nPlease check your internet connection and restart the program!",
+                            + "\nPlease check your internet connection and restart the program!",
                     "Failed Warning", JOptionPane.WARNING_MESSAGE);
         } finally {
             if (stmt != null) {
@@ -172,49 +171,57 @@ public class EmploymentDB {
         theSearch = theSearch.toLowerCase();
         // searching name
         for (EmploymentData emp : myEmploymentList) {
-            if (emp.getMyStudentName().toLowerCase().contains(theSearch)) {
+            if (emp.getMyStudentName().toLowerCase().contains(theSearch)
+                    && !filterList.contains(emp)) {
                 filterList.add(emp);
             }
         }
         // student ID
         for (EmploymentData emp : myEmploymentList) {
-            if (emp.getSID().toLowerCase().contains(theSearch)) {
+            if (emp.getSID().toLowerCase().contains(theSearch)
+                    && !filterList.contains(emp)) {
                 filterList.add(emp);
             }
         }
         // company name
         for (EmploymentData emp : myEmploymentList) {
-            if (emp.getCompany().toLowerCase().contains(theSearch)) {
+            if (emp.getCompany().toLowerCase().contains(theSearch)
+                    && !filterList.contains(emp)) {
                 filterList.add(emp);
             }
         }
         // position
         for (EmploymentData emp : myEmploymentList) {
-            if (emp.getPosition().toLowerCase().contains(theSearch)) {
+            if (emp.getPosition().toLowerCase().contains(theSearch)
+                    && !filterList.contains(emp)) {
                 filterList.add(emp);
             }
         }
         // skill
         for (EmploymentData emp : myEmploymentList) {
-            if (emp.getSkill().toLowerCase().contains(theSearch)) {
+            if (emp.getSkill().toLowerCase().contains(theSearch)
+                    && !filterList.contains(emp)) {
                 filterList.add(emp);
             }
         }
         // start date
         for (EmploymentData emp : myEmploymentList) {
-            if (emp.getStartDate().toLowerCase().contains(theSearch)) {
+            if (emp.getStartDate().toLowerCase().contains(theSearch)
+                    && !filterList.contains(emp)) {
                 filterList.add(emp);
             }
         }
         // end date
         for (EmploymentData emp : myEmploymentList) {
-            if (emp.getEndDate().toLowerCase().contains(theSearch)) {
+            if (emp.getEndDate().toLowerCase().contains(theSearch)
+                    && !filterList.contains(emp)) {
                 filterList.add(emp);
             }
         }
         // type - job or internship
         for (EmploymentData emp : myEmploymentList) {
-            if (emp.getMyType().toLowerCase().contains(theSearch)) {
+            if (emp.getMyType().toLowerCase().contains(theSearch)
+                    && !filterList.contains(emp)) {
                 filterList.add(emp);
             }
         }

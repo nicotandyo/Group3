@@ -111,32 +111,6 @@ public class Student {
         myStdID = theID;
     }
 
-//    /**
-//     * Add an employment to the list of job or intern.
-//     * @param theEmployment
-//     */
-//    public void addEmployment(EmploymentData theEmployment) {
-//    	if(theEmployment.getMyType() == "Intership") {
-//    		mInternList.add(theEmployment);
-//    	}else if(theEmployment.getMyType() == "Job") {
-//    		mJobList.add(theEmployment);
-//    	}
-//    }
-//    /**
-//     * Get the list of job.
-//     * @return a list of job
-//     */
-//    public List<EmploymentData> getJobList() {
-//    	return mJobList;
-//    }
-//    /**
-//     * Get the list of intern.
-//     * @return a list of intern.
-//     */
-//    public List<EmploymentData> getInternList() {
-//    	return mInternList;
-//    }
-
     /**
      * Get the student's major.
      *

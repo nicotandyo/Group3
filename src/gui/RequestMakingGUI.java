@@ -197,8 +197,8 @@ public class RequestMakingGUI extends JPanel implements ActionListener {
     public void actionPerformed(final ActionEvent theEvent) {
         if (theEvent.getSource() == myBtnInstruction) {
             JOptionPane.showMessageDialog(null, "We would love to know about your position"
-            		+ " description and the skills used.\nIf you have time, please tell us"
-            		+ " about those information in the comment section.\nThank you.",
+                            + " description and the skills used.\nIf you have time, please tell us"
+                            + " about those information in the comment section.\nThank you.",
                     "Request Instruction", JOptionPane.INFORMATION_MESSAGE);
         } else if (theEvent.getSource() == myAddBtn) {
             performAddRequest();

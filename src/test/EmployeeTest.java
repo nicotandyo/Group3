@@ -53,7 +53,6 @@ public class EmployeeTest {
 
     /**
      * Test the constructor.
-     *
      */
     @Test(expected = IllegalArgumentException.class)
     public void testConstructor() {

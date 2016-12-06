@@ -2,11 +2,10 @@ package data;
 
 import request.Request;
 
+import javax.swing.*;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
-
-import javax.swing.JOptionPane;
 
 /**
  * This class contains methods to access Request table.
@@ -59,7 +58,7 @@ public class RequestDB {
         } catch (SQLException e) {
 //            e.printStackTrace(); //For debugging.
             JOptionPane.showMessageDialog(null, "Unable to connect to the server!"
-                    + "\nPlease check your internet connection and restart the program!",
+                            + "\nPlease check your internet connection and restart the program!",
                     "Login failed", JOptionPane.WARNING_MESSAGE);
         } finally {
             if (stmt != null) {
@@ -99,7 +98,7 @@ public class RequestDB {
         } catch (SQLException e) {
 //            e.printStackTrace(); //For debugging.!
             JOptionPane.showMessageDialog(null, "Unable to connect to the server!"
-                    + "\nPlease check your internet connection and restart the program!",
+                            + "\nPlease check your internet connection and restart the program!",
                     "Failed Warning", JOptionPane.WARNING_MESSAGE);
             return "Error adding request: " + e.getMessage();
         }

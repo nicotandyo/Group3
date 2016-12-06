@@ -5,7 +5,8 @@ username = advisor, password = advisor - to login as an advisor.
 press the "Log in as a student" button to login as a student.
 
 Use cases that are implemented: Add or Update Student' Data, Generate Outputs, Login into the system, 
-Graduated students request to edit their employment information. 
+Graduated students request to edit their employment information and we also implemented the design pattern which is the iterator 
+and used it in our StudentGUI class. 
 	Nico is working on the model classes and writing tests, add changes in the Phase 3 document. 
 	Yau: working on model classes, writing tests, fixing GUI classes, clean up code and working on the design pattern.
 	Loc: working on all of the GUI classes, clean up code and add changes in the Phase 3 document.
@@ -27,6 +28,8 @@ Major - Show all of the students with selected major and then sort their name in
 Degree - Show all of the students with selected degree and then sort their name in alphabetical order.
 Internship - Show all of the students with an internship and then sort their name in alphabetical order.
 Job - Show all of the students with a job and then sort their name in alphabetical order.
+The users can't generate output for students that don't have employment information. They can use the Search Student in the
+"Add or Update Student's Data" tab to do that.
 In the "Generates outputs" tab, the users can't edit the student's data. If they want to modify the student's data,
 they have to do that in the "Add or Update student's Employment Information" tab.
 You can also view and delete student request in the "View Student Request" tab.

@@ -16,7 +16,7 @@ import java.util.List;
  * @author Yau Tsang
  * @author Loc Bui
  */
-public class StudentCollection implements Container{
+public class StudentCollection implements Container {
 
     /**
      * Connect to Student database.
@@ -84,56 +84,60 @@ public class StudentCollection implements Container{
         return list;
     }
 
-	/**
-	 * Return a list of students with the matching major or degree.
-	 * @param theName of the major or degree.
-	 * @return a list of students with matching major.
-	 */
-	public static List<Output> searchByMajorOrDegree(final String theName) {
-		List<Output> list = new ArrayList<>();
-		if (myStudentDB == null) {
-			myStudentDB = new StudentDB();
-		}
-		try {
-				return StudentDB.searchByMajorOrDegree(theName);
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
-		return list;
-	}
+    /**
+     * Return a list of students with the matching major or degree.
+     *
+     * @param theName of the major or degree.
+     * @return a list of students with matching major.
+     */
+    public static List<Output> searchByMajorOrDegree(final String theName) {
+        List<Output> list = new ArrayList<>();
+        if (myStudentDB == null) {
+            myStudentDB = new StudentDB();
+        }
+        try {
+            return StudentDB.searchByMajorOrDegree(theName);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return list;
+    }
 
-	/**
-	 * Return a list of students with the matching intern.
+    /**
+     * Return a list of students with the matching intern.
+     *
      * @return a list of students with matching intern
-	 */
-	public static List<Output> searchByInternship() {
-		List<Output> list = new ArrayList<>();
-		if (myStudentDB == null) {
-			myStudentDB = new StudentDB();
-		}
-		try {
+     */
+    public static List<Output> searchByInternship() {
+        List<Output> list = new ArrayList<>();
+        if (myStudentDB == null) {
+            myStudentDB = new StudentDB();
+        }
+        try {
             return StudentDB.searchByInternship();
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
-		return list;
-	}
-	/**
-	 * Return a list of students with the matching job.
-	 * @return a list of students with matching intern
-	 */
-	public static List<Output> searchByJob() {
-		List<Output> list = new ArrayList<>();
-		if (myStudentDB == null) {
-			myStudentDB = new StudentDB();
-		}
-		try {
-				return StudentDB.searchByJob();
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
-		return list;
-	}
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return list;
+    }
+
+    /**
+     * Return a list of students with the matching job.
+     *
+     * @return a list of students with matching intern
+     */
+    public static List<Output> searchByJob() {
+        List<Output> list = new ArrayList<>();
+        if (myStudentDB == null) {
+            myStudentDB = new StudentDB();
+        }
+        try {
+            return StudentDB.searchByJob();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return list;
+    }
 
     /**
      * Modify the particular column of the student with the given data can only modify email.
@@ -188,13 +192,14 @@ public class StudentCollection implements Container{
 
     /**
      * Gets an iterator.
+     *
      * @param theKey searching keyword.
      * @return an iterator.
      */
     @Override
     public Iterator getIterator(final String theKey) {
         if (theKey == null) {
-           myStudentList = showAll();
+            myStudentList = showAll();
         } else {
             myStudentList = search(theKey);
         }
@@ -203,6 +208,7 @@ public class StudentCollection implements Container{
 
     /**
      * Size of the list.
+     *
      * @return the size of the list.
      */
     @Override
@@ -221,6 +227,7 @@ public class StudentCollection implements Container{
 
         /**
          * Looking there is next object or not.
+         *
          * @return true if there is an object, false otherwise.
          */
         @Override
@@ -233,6 +240,7 @@ public class StudentCollection implements Container{
 
         /**
          * Iterate to the next object.
+         *
          * @return next object.
          */
         @Override
