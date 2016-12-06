@@ -199,13 +199,13 @@ public class OutputGUI extends JPanel implements ActionListener {
         myPnlContent.setVisible(true);
         this.repaint();
     }
-    
+
     /**
-     * Print this message when our system is unable to find the student’s information that match the criteria.
+     * Print this message when our system is unable to find the studentï¿½s information that match the criteria.
      */
     public void printMessage() {
-    	JOptionPane.showMessageDialog(null, "Unable to retrieve student's information from the input!"
-                + "\nPlease select a different criterion to view by.",
+        JOptionPane.showMessageDialog(null, "Unable to retrieve student's information from the input!"
+                        + "\nPlease select a different criterion to view by.",
                 null, JOptionPane.INFORMATION_MESSAGE);
     }
 
@@ -220,8 +220,8 @@ public class OutputGUI extends JPanel implements ActionListener {
             if (myComboBox.getSelectedItem().equals("GPA")) {
                 try {
                     myList = getData(GPA);
-                    if(myList.size() == 0) {
-                    	printMessage();
+                    if (myList.size() == 0) {
+                        printMessage();
                     }
                 } catch (SQLException e1) {
                     e1.printStackTrace();
@@ -230,8 +230,8 @@ public class OutputGUI extends JPanel implements ActionListener {
             } else if (myComboBox.getSelectedItem().equals("Salary")) {
                 try {
                     myList = getData(SALARY);
-                    if(myList.size() == 0) {
-                    	printMessage();
+                    if (myList.size() == 0) {
+                        printMessage();
                     }
                 } catch (SQLException e1) {
                     e1.printStackTrace();
@@ -240,8 +240,8 @@ public class OutputGUI extends JPanel implements ActionListener {
             } else if (myComboBox.getSelectedItem().equals("Internship")) {
                 try {
                     myList = getData(INTERNSHIP);
-                    if(myList.size() == 0) {
-                    	printMessage();
+                    if (myList.size() == 0) {
+                        printMessage();
                     }
                 } catch (SQLException e1) {
                     e1.printStackTrace();
@@ -250,8 +250,8 @@ public class OutputGUI extends JPanel implements ActionListener {
             } else if (myComboBox.getSelectedItem().equals("Job")) {
                 try {
                     myList = getData(JOB);
-                    if(myList.size() == 0) {
-                    	printMessage();
+                    if (myList.size() == 0) {
+                        printMessage();
                     }
                 } catch (SQLException e1) {
                     e1.printStackTrace();
@@ -260,8 +260,8 @@ public class OutputGUI extends JPanel implements ActionListener {
             } else if (myComboBox.getSelectedItem().equals("Major - CSS")) {
                 try {
                     myList = getMajorOrDegree("CSS");
-                    if(myList.size() == 0) {
-                    	printMessage();
+                    if (myList.size() == 0) {
+                        printMessage();
                     }
                 } catch (SQLException e1) {
                     e1.printStackTrace();
@@ -270,8 +270,8 @@ public class OutputGUI extends JPanel implements ActionListener {
             } else if (myComboBox.getSelectedItem().equals("Major - CES")) {
                 try {
                     myList = getMajorOrDegree("CES");
-                    if(myList.size() == 0) {
-                    	printMessage();
+                    if (myList.size() == 0) {
+                        printMessage();
                     }
                 } catch (SQLException e1) {
                     e1.printStackTrace();
@@ -280,8 +280,8 @@ public class OutputGUI extends JPanel implements ActionListener {
             } else if (myComboBox.getSelectedItem().equals("Major - IT")) {
                 try {
                     myList = getMajorOrDegree("IT");
-                    if(myList.size() == 0) {
-                    	printMessage();
+                    if (myList.size() == 0) {
+                        printMessage();
                     }
                 } catch (SQLException e1) {
                     e1.printStackTrace();
@@ -290,8 +290,8 @@ public class OutputGUI extends JPanel implements ActionListener {
             } else if (myComboBox.getSelectedItem().equals("Degree - BA")) {
                 try {
                     myList = getMajorOrDegree("Bachelor of Arts");
-                    if(myList.size() == 0) {
-                    	printMessage();
+                    if (myList.size() == 0) {
+                        printMessage();
                     }
                 } catch (SQLException e1) {
                     e1.printStackTrace();
@@ -300,8 +300,8 @@ public class OutputGUI extends JPanel implements ActionListener {
             } else if (myComboBox.getSelectedItem().equals("Degree - BS")) {
                 try {
                     myList = getMajorOrDegree("Bachelor of Science");
-                    if(myList.size() == 0) {
-                    	printMessage();
+                    if (myList.size() == 0) {
+                        printMessage();
                     }
                 } catch (SQLException e1) {
                     e1.printStackTrace();
@@ -310,8 +310,8 @@ public class OutputGUI extends JPanel implements ActionListener {
             } else if (myComboBox.getSelectedItem().equals("Degree - MS")) {
                 try {
                     myList = getMajorOrDegree("Master of Science");
-                    if(myList.size() == 0) {
-                    	printMessage();
+                    if (myList.size() == 0) {
+                        printMessage();
                     }
                 } catch (SQLException e1) {
                     e1.printStackTrace();

@@ -1,6 +1,8 @@
 package student;
 
 import data.StudentDB;
+import design_pattern.Container;
+import design_pattern.Iterator;
 import gui.OutputGUI;
 
 import java.sql.SQLException;
@@ -14,12 +16,17 @@ import java.util.List;
  * @author Yau Tsang
  * @author Loc Bui
  */
-public class StudentCollection {
+public class StudentCollection implements Container{
 
     /**
      * Connect to Student database.
      */
     private static StudentDB myStudentDB;
+
+    /**
+     * A list contains student.
+     */
+    private static List<Student> myStudentList;
 
     /**
      * Return a list of students with the matching name.
@@ -28,16 +35,17 @@ public class StudentCollection {
      * @return a list of clients that match.
      */
     public static List<Student> search(final String theName) {
-        List<Student> list = new ArrayList<>();
+        myStudentList = new ArrayList<>();
         if (myStudentDB == null) {
             myStudentDB = new StudentDB();
         }
         try {
-            return myStudentDB.getStudents(theName);
+            myStudentList = myStudentDB.getStudents(theName);
+            return myStudentList;
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        return list;
+        return myStudentList;
     }
 
     /**
@@ -165,14 +173,75 @@ public class StudentCollection {
      * @return a list of students
      */
     public static List<Student> showAll() {
+        myStudentList = new ArrayList<>();
         if (myStudentDB == null) {
             myStudentDB = new StudentDB();
         }
         try {
-            return myStudentDB.getStudents();
+            myStudentList = myStudentDB.getStudents();
+            return myStudentList;
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        return null;
+        return myStudentList;
     }
+
+    /**
+     * Gets an iterator.
+     * @param theKey searching keyword.
+     * @return an iterator.
+     */
+    @Override
+    public Iterator getIterator(final String theKey) {
+        if (theKey == null) {
+           myStudentList = showAll();
+        } else {
+            myStudentList = search(theKey);
+        }
+        return new StudentsIterator();
+    }
+
+    /**
+     * Size of the list.
+     * @return the size of the list.
+     */
+    @Override
+    public int getSize() {
+        if (myStudentList == null) {
+            myStudentList = showAll();
+        }
+        return myStudentList.size();
+    }
+
+    /**
+     * A iterator method that convert a list into iterator.
+     */
+    private class StudentsIterator implements Iterator {
+        int index;
+
+        /**
+         * Looking there is next object or not.
+         * @return true if there is an object, false otherwise.
+         */
+        @Override
+        public boolean hasNext() {
+            if (index < myStudentList.size()) {
+                return true;
+            }
+            return false;
+        }
+
+        /**
+         * Iterate to the next object.
+         * @return next object.
+         */
+        @Override
+        public Object next() {
+            if (this.hasNext()) {
+                return myStudentList.get(index++);
+            }
+            return null;
+        }
+    }
+
 }

@@ -1,5 +1,6 @@
 package gui;
 
+import design_pattern.Iterator;
 import student.Student;
 import student.StudentCollection;
 
@@ -10,6 +11,7 @@ import javax.swing.table.TableModel;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -105,11 +107,18 @@ public class StudentGUI extends JPanel implements ActionListener,
     private JLabel mylblTitle;
 
     /**
+     * It allows access to SudentCollection class.
+     */
+    private StudentCollection myStudentCollection;
+
+    /**
      * This constructor calls the method to create all of the components
      */
     public StudentGUI() {
         setLayout(new BorderLayout());
-        myList = getData(null);
+        myStudentCollection = new StudentCollection();
+        myList = new ArrayList<>();
+        /*myIter = */getData(null);
         createComponents();
         setVisible(true);
     }
@@ -120,28 +129,51 @@ public class StudentGUI extends JPanel implements ActionListener,
      * @param theSearchKey the key to search for a student.
      * @return list of student
      */
-    private List<Student> getData(final String theSearchKey) {
+    private void getData(final String theSearchKey) {
+//        if (theSearchKey != null) {
+//            myList = StudentCollection.search(theSearchKey);
+//        } else {
+//            myList = StudentCollection.showAll();
+//        }
+        myList.clear();
+        Iterator iter;
         if (theSearchKey != null) {
-            myList = StudentCollection.search(theSearchKey);
+            iter = myStudentCollection.getIterator(theSearchKey);
         } else {
-            myList = StudentCollection.showAll();
+            iter = myStudentCollection.getIterator(null);
         }
 
-        if (myList != null) {
-            myData = new Object[myList.size()][myColumnNames.length];
-            for (int i = 0; i < myList.size(); i++) {
-                myData[i][0] = myList.get(i).getName();
-                myData[i][1] = myList.get(i).getID();
-                myData[i][2] = myList.get(i).getMajor();
-                myData[i][3] = myList.get(i).getTerm();
-                myData[i][4] = myList.get(i).getDegree();
-                myData[i][5] = myList.get(i).getYear();
-                myData[i][6] = myList.get(i).getGPA();
-                myData[i][7] = myList.get(i).getEmail();
+        int size = myStudentCollection.getSize();
+
+        if (iter != null) {
+            myData = new Object[size][myColumnNames.length];
+//            for (int i = 0; i < myList.size(); i++) {
+//                myData[i][0] = myList.get(i).getName();
+//                myData[i][1] = myList.get(i).getID();
+//                myData[i][2] = myList.get(i).getMajor();
+//                myData[i][3] = myList.get(i).getTerm();
+//                myData[i][4] = myList.get(i).getDegree();
+//                myData[i][5] = myList.get(i).getYear();
+//                myData[i][6] = myList.get(i).getGPA();
+//                myData[i][7] = myList.get(i).getEmail();
+//            }
+            int i = 0;
+            for(; iter.hasNext();){
+                Student student = (Student) iter.next();
+                myList.add(student);
+                myData[i][0] = student.getName();
+                myData[i][1] = student.getID();
+                myData[i][2] = student.getMajor();
+                myData[i][3] = student.getTerm();
+                myData[i][4] = student.getDegree();
+                myData[i][5] = student.getYear();
+                myData[i][6] = student.getGPA();
+                myData[i][7] = student.getEmail();
+                i++;
             }
         }
-
-        return myList;
+//        System.out.println(!myIter.hasNext());
+//        return myIter;
     }
 
     /**
@@ -275,7 +307,8 @@ public class StudentGUI extends JPanel implements ActionListener,
         } else if (theEvent.getSource() == myAddBtn) {
             performAddStudent();
         } else if (theEvent.getSource() == myBtnList) {
-            myList = getData(null);
+//            myList = null;
+            /*myIter = */getData(null);
             myPnlContent.removeAll();
             myTable = new JTable(myData, myColumnNames);
             myTable.getModel().addTableModelListener(this);
@@ -293,7 +326,8 @@ public class StudentGUI extends JPanel implements ActionListener,
         } else if (theEvent.getSource() == mySearchBtn) {
             String title = myTxfTitle.getText();
             if (title.length() > 0) {
-                myList = getData(title);
+//                myList = null;
+                /*myIter = */getData(title);
                 myPnlContent.removeAll();
                 myTable = new JTable(myData, myColumnNames);
                 myTable.getModel().addTableModelListener(this);
