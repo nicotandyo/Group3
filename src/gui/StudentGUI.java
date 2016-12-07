@@ -118,7 +118,6 @@ public class StudentGUI extends JPanel implements ActionListener,
         setLayout(new BorderLayout());
         myStudentCollection = new StudentCollection();
         myList = new ArrayList<>();
-        /*myIter = */
         getData(null);
         createComponents();
         setVisible(true);
