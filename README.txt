@@ -75,5 +75,7 @@ Our program will catch the exceptions when:
 	
 Lastly, when there is no internet connection, our program will display a message dialog that says 
 "Unable to connect to the server! Please check your internet connection and restart the program!" when users try to log in.
-In addition, if you are already logged in into the system and you lose your internet connection, then our program will
-pop up a message says that "unable to connect to the server" when you try to do any operations. 
+In addition, if you are already logged in into the system and you lose your internet connection, then our program will be trying to
+connect to the server and it takes 10 seconds to do that, after that it will pop up a message says that "Unable to connect to the
+server! Please check your internet connection and restart the program!" when you try to do any operations. 
+
