@@ -2,7 +2,8 @@ package design_pattern;
 
 /**
  * It's a container for iterator design pattern.
- * Created by Yau on 12/5/2016.
+ * @author Yau
+ * @author Nico Tandyo
  */
 public interface Container {
 

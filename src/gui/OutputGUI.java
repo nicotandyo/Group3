@@ -16,6 +16,7 @@ import java.util.List;
  *
  * @author Loc Bui
  * @author Yau Tsang
+ * @author Nico Tandyo
  */
 public class OutputGUI extends JPanel implements ActionListener {
 

@@ -7,7 +7,8 @@ import java.util.List;
 
 /**
  * It's a collection of all request methods.
- * Created by Yau on 11/29/2016.
+ * @author Yau
+ * @author Nico Tandyo
  */
 public class RequestCollection {
 

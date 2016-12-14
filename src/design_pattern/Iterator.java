@@ -2,7 +2,8 @@ package design_pattern;
 
 /**
  * Iterator for design pattern.
- * Created by Yau on 12/5/2016.
+ * @author Yau
+ * @author Nico Tandyo
  */
 public interface Iterator {
 

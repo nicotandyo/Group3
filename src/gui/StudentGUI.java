@@ -20,6 +20,7 @@ import java.util.List;
  *
  * @author Loc Bui
  * @author Yau Tsang
+ * @author Nico Tandyo
  */
 public class StudentGUI extends JPanel implements ActionListener,
         TableModelListener {

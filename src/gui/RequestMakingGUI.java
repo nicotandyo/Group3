@@ -13,6 +13,7 @@ import java.awt.event.ActionListener;
  *
  * @author Loc Bui
  * @author Yau Tsang
+ * @author Nico Tandyo
  */
 public class RequestMakingGUI extends JPanel implements ActionListener {
 

@@ -17,6 +17,7 @@ import java.util.List;
  *
  * @author Loc Bui
  * @author Yau Tsang
+ * @author Nico Tandyo
  */
 public class ViewRequestGUI extends JPanel implements ActionListener {
 

@@ -13,6 +13,7 @@ import java.util.Properties;
  *
  * @author Loc Bui
  * @author Yau Tsang
+ * @author Nico Tandyo
  */
 
 public class DataConnection {

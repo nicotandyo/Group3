@@ -3,7 +3,8 @@ package employee;
 /**
  * Employee class represents a single employee with username, password,
  * and role.
- * Created by Yau on 11/27/2016.
+ * @author Yau
+ * @author Nico Tandyo
  */
 public class Employee {
 

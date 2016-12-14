@@ -9,6 +9,7 @@ import java.sql.SQLException;
  *
  * @author Loc Bui
  * @author Yau Tsang
+ * @author Nico Tandyo
  */
 public class HomeGUI {
 

@@ -3,7 +3,8 @@ package student;
 /**
  * Output class represent the output with student name, student id, GPA, major, degree,
  * salary, company, position, and the type of employment.
- * Created by Yau on 12/1/2016.
+ * @author Yau
+ * @author Nico Tandyo
  */
 public class Output {
 

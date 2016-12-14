@@ -2,7 +2,8 @@ package request;
 
 /**
  * Request class represents a request with student's ID number and request string.
- * Created by Yau on 11/29/2016.
+ * @author Nico Tandyo
+ * @author Yau
  */
 public class Request {
 

@@ -11,6 +11,7 @@ import java.awt.event.ActionListener;
  *
  * @author Loc Bui
  * @author Yau Tsang
+ * @author Nico Tandyo
  */
 public class LogoutGUI extends JPanel implements ActionListener {
 

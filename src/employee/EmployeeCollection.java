@@ -6,7 +6,8 @@ import java.sql.SQLException;
 
 /**
  * It's a collection of all the employees login.
- * Created by Yau on 11/27/2016.
+ * @author Yau
+ * @author Nico Tandyo
  */
 public class EmployeeCollection {
 

@@ -11,7 +11,8 @@ import java.sql.Statement;
 
 /**
  * This class contains methods to access Employee table.
- * Created by Yau Tsang on 11/27/2016.
+ * @author Yau Tsang 
+ * @author Nico Tandyo
  */
 public class EmployeeDB {
 

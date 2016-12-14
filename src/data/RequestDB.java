@@ -9,7 +9,8 @@ import java.util.List;
 
 /**
  * This class contains methods to access Request table.
- * Created by Yau on 11/29/2016.
+ * @author Yau Tsang
+ * @author Nico Tandyo
  */
 public class RequestDB {
 
